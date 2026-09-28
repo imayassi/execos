@@ -15,14 +15,11 @@ enterprise machine before it is relied on.
 
 ## 0. Phase 0 — what was inspected and what was verified
 
-### 0.1 The existing repository
+### 0.1 Repository
 
-The `farescout` repository contains an unrelated Python/Streamlit flight-and-hotel
-search tool (`streamlit_app.py`, `travel_search.py`, `airports.py`). Nothing in it is
-reusable for this product, and it is left untouched. ExecOS lives in its own
-top-level directory, `exec-os/`, with its own toolchain, so the two projects do not
-interfere. If ExecOS is later moved to its own repository, `exec-os/` can be lifted
-out verbatim.
+ExecOS was first developed inside an unrelated repository (`farescout`, a Streamlit
+flight-search tool) under `exec-os/`, and was then split into this standalone
+repository with its history preserved. Nothing from that repository is used here.
 
 ### 0.2 GitHub Copilot CLI — verified programmatic invocation
 
@@ -161,7 +158,7 @@ Chosen stack:
 ## 2. Repository structure
 
 ```
-exec-os/
+execos/
 ├── ARCHITECTURE.md              ← this document
 ├── README.md                    ← install / run / troubleshoot
 ├── docs/
@@ -206,13 +203,13 @@ build output.
 
 | Category | Location (Windows) | Git | Notes |
 |---|---|---|---|
-| Code | `<clone>\exec-os\` | tracked | Never written at runtime |
-| Config templates | `<clone>\exec-os\config\*.example.yaml` | tracked | Sanitized |
+| Code | `<clone>\` | tracked | Never written at runtime |
+| Config templates | `<clone>\config\*.example.yaml` | tracked | Sanitized |
 | **User config** | `%LOCALAPPDATA%\ExecOS\config\app.yaml`, `mcp.yaml` | outside repo | Created from templates by installer; may name people/terms → private |
 | **Private data** | `%LOCALAPPDATA%\ExecOS\data\execos.sqlite` | outside repo | Evidence, objects, journal, feedback, summaries |
 | **Cache** | `%LOCALAPPDATA%\ExecOS\cache\` | outside repo | Provider responses, batch inputs; TTL-bounded |
 | **Logs** | `%LOCALAPPDATA%\ExecOS\logs\` | outside repo | Metadata-only; bodies never logged (§3.2) |
-| **User documents** | `%LOCALAPPDATA%\ExecOS\docs\` (default) | outside repo | Optional repo-local `exec-os/docs/local-docs/` is git-ignored and displays a warning banner in Settings |
+| **User documents** | `%LOCALAPPDATA%\ExecOS\docs\` (default) | outside repo | Optional repo-local `docs/local-docs/` is git-ignored and displays a warning banner in Settings |
 | Copilot session state | `%LOCALAPPDATA%\ExecOS\copilot-home\` | outside repo | via `COPILOT_HOME`; contains prompts → private |
 | Access token | `%LOCALAPPDATA%\ExecOS\config\local-token` | outside repo | random per install; loopback API auth |
 

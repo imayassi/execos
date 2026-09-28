@@ -11,14 +11,14 @@ listed as unsupported so you know they were not read (conversion is a Phase 5 it
 
 ## This directory
 
-`exec-os/docs/local-docs/` is a *convenience* drop location that is git-ignored (everything except
+`docs/local-docs/` is a *convenience* drop location that is git-ignored (everything except
 this README). To use it, set in `%LOCALAPPDATA%\ExecOS\config\mcp.yaml`:
 
 ```yaml
   - id: local_docs
     enabled: true
     type: local_docs
-    directory: "C:\\path\\to\\farescout\\exec-os\\docs\\local-docs"
+    directory: "C:\\path\\to\\execos\\docs\\local-docs"
 ```
 
 **Warning:** documents placed here live inside a git working tree. They are ignored by git, but

@@ -44,7 +44,7 @@ export async function runDoctor(dataRoot: string = resolveDataRoot(), opts: { pr
 
   let sdkOk = false;
   try { await import("@github/copilot-sdk"); sdkOk = true; } catch { /* optional */ }
-  checks.push({ name: "Copilot SDK", ok: sdkOk, level: "info", detail: sdkOk ? "@github/copilot-sdk installed (primary backend)" : "not installed; CLI fallback will be used", remediation: sdkOk ? undefined : "Run `npm install` in exec-os/ with network access to npmjs.org." });
+  checks.push({ name: "Copilot SDK", ok: sdkOk, level: "info", detail: sdkOk ? "@github/copilot-sdk installed (primary backend)" : "not installed; CLI fallback will be used", remediation: sdkOk ? undefined : "Run `npm install` in the repository root with network access to npmjs.org." });
 
   if (copilotVer) {
     const login = spawnSync(backendCmd, ["-p", "Reply with the single word OK", "-s", "--no-ask-user", "--disable-builtin-mcps"], { encoding: "utf8", timeout: 60000, shell: process.platform === "win32" });

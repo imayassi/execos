@@ -9,7 +9,7 @@ The repository contains application logic only. **Private data never lives insid
 
 | What | Where | Committed? |
 |---|---|---|
-| Code, prompts (no user content), sanitized config templates | `<clone>\exec-os\` | yes |
+| Code, prompts (no user content), sanitized config templates | `<clone>\` | yes |
 | Your configuration (names, roles, terminology, provider commands) | `%LOCALAPPDATA%\ExecOS\config\` | never |
 | Evidence, themes, actions, decisions, escalations, risks, recommendations, summaries, journal, feedback | `%LOCALAPPDATA%\ExecOS\data\execos.sqlite` | never |
 | Provider caches | `%LOCALAPPDATA%\ExecOS\cache\` | never |
@@ -57,6 +57,6 @@ statuses and error messages are written.
 
 ## Repo-local documents (optional convenience)
 
-`exec-os/docs/local-docs/` is git-ignored except its README. If you point `local_docs.directory`
+`docs/local-docs/` is git-ignored except its README. If you point `local_docs.directory`
 at it, the Sources page shows a warning because the directory is inside a repository. Prefer the
 default `%LOCALAPPDATA%\ExecOS\docs`.

@@ -20,7 +20,7 @@ param(
   [switch]$NoShortcut
 )
 $ErrorActionPreference = "Stop"
-$Root = Split-Path -Parent $PSScriptRoot          # exec-os/
+$Root = Split-Path -Parent $PSScriptRoot          # repository root
 $AppName = "ExecOS"
 $DataRoot = if ($env:EXECOS_HOME) { $env:EXECOS_HOME } else { Join-Path $env:LOCALAPPDATA $AppName }
 

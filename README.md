@@ -26,8 +26,8 @@ CLI signed in with your enterprise GitHub account, and a Microsoft 365 account w
 WorkIQ. No API keys are needed.
 
 ```powershell
-git clone <this repository>
-cd farescout\exec-os
+git clone https://github.com/imayassi/execos.git
+cd execos
 powershell -ExecutionPolicy Bypass -File scripts\install.ps1
 ```
 
@@ -49,6 +49,8 @@ Want to explore without enterprise access? `scripts\install.ps1 -DemoData` enabl
 organization (fictional people and messages) so every screen and workflow can be exercised.
 
 Other platforms (development): `npm install && npm run build && npm start`.
+
+ExecOS is a standalone repository; it shares nothing with any other project.
 
 ## Everyday use
 
@@ -158,7 +160,7 @@ Templates are in `config/*.example.yaml`; your real copies live in
 ## Repository layout
 
 ```
-exec-os/
+execos/
   ARCHITECTURE.md   design, verified facts, unknowns, phases
   config/           sanitized templates only
   docs/             privacy, threat model, local-docs guide

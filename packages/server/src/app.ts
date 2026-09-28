@@ -347,7 +347,7 @@ export function createApp(rt: Runtime): FastifyInstance {
       return reply.sendFile("index.html");
     });
   } else {
-    app.get("/", async () => ({ message: "ExecOS API is running. UI is not built: run `npm run build` in exec-os/." }));
+    app.get("/", async () => ({ message: "ExecOS API is running. UI is not built: run `npm run build` in the repository root." }));
   }
 
   app.setErrorHandler((err: Error & { statusCode?: number }, _req, reply) => {
